@@ -1,0 +1,2 @@
+# Check setup.py
+-e .

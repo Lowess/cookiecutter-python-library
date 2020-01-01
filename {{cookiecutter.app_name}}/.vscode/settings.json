@@ -1,0 +1,25 @@
+{
+  "python.linting.pylintEnabled": false,
+  "python.linting.flake8Enabled": true,
+  "python.linting.enabled": true,
+  "python.formatting.provider": "black",
+  "python.formatting.blackPath": "~/.pyenv/shims/black",
+  "python.sortImports.args": [
+    "-rc",
+    "--settings-path",
+    "${workspaceFolder}",
+  ],
+  "[python]": {
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": true
+    }
+  },
+  "python.pythonPath": "/Users/florian/.pyenv/versions/konnector/bin/python",
+  "python.venvPath": "~/.pyenv/shims",
+  "editor.formatOnPaste": false,
+  "editor.formatOnSave": true,
+  "editor.formatOnSaveTimeout": 5000,
+  "editor.codeActionsOnSaveTimeout": 5000,
+  "restructuredtext.confPath": "${workspaceFolder}/docs/sphinx",
+}

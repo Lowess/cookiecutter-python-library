@@ -1,0 +1,55 @@
+---
+### YAML Anchors
+
+tox_image: &tox_image
+  image: themattrix/tox:latest
+  volumes:
+    - name: pip_cache
+      path: /root/.cache/pip
+
+### Pipline
+
+kind: pipeline
+name: python-ci-cd
+steps:
+  - name: lint
+    <<: *tox_image
+    commands:
+      - tox -e lint
+
+  - name: checkstyle
+    <<: *tox_image
+    commands:
+      - tox -e checkstyle
+
+  - name: unit-tests
+    <<: *tox_image
+    commands:
+      - tox -e coverage
+
+  - name: coveralls
+    <<: *tox_image
+    environment:
+      COVERALLS_REPO_TOKEN:
+        from_secret: coveralls_token
+    commands:
+      - tox -e coveralls
+
+  - name: release
+    image: plugins/docker
+    settings:
+      registry: docker.io
+      repo: lowess/${DRONE_REPO_NAME}
+      username:
+        from_secret: docker_username
+      password:
+        from_secret: docker_password
+      tags:
+        - ${DRONE_TAG}
+        - latest
+    when:
+      event: tag
+
+volumes:
+  - name: pip_cache
+    temp: {}
