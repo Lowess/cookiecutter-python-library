@@ -1,11 +1,11 @@
 # :trident: {{cookiecutter.app_name | capitalize}}
 
-[![Build Status](https://cloud.drone.io/api/badges/Lowess/{{cookiecutter.app_name}}/status.svg)](https://cloud.drone.io/Lowess/karrot)
-[![Coverage Status](https://coveralls.io/repos/github/Lowess/{{cookiecutter.app_name}}/badge.svg?branch=master)](https://coveralls.io/github/Lowess/karrot?branch=master)
+[![Build Status](https://cloud.drone.io/api/badges/{{cookiecutter.github_username }}/{{cookiecutter.app_name}}/status.svg)](https://cloud.drone.io/{{cookiecutter.github_username }}/{{cookiecutter.app_name}})
+[![Coverage Status](https://coveralls.io/repos/github/{{cookiecutter.github_username }}/{{cookiecutter.app_name}}/badge.svg?branch=master)](https://coveralls.io/github/{{cookiecutter.github_username }}//{{cookiecutter.app_name}}?branch=master)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-black.svg)](https://github.com/psf/black)
 [![Linter: flake8](https://img.shields.io/badge/linter-flake8-blue.svg)](http://flake8.pycqa.org/en/latest/)
 [![Linter: tests](https://img.shields.io/badge/tests-tox-yellow.svg)](hhttps://tox.readthedocs.io/en/latest)
-[![Documentation Status](https://readthedocs.org/projects/karrot/badge/?version=latest)](https://karrot.readthedocs.io/en/latest/?badge=latest)
+[![Documentation Status](https://readthedocs.org/projects//{{cookiecutter.app_name}}/badge/?version=latest)](https:///{{cookiecutter.app_name}}.readthedocs.io/en/latest/?badge=latest)
 
 ## Developer - Getting-Started
 
@@ -49,7 +49,7 @@ VSCode `settings.json`
       "source.organizeImports": true
     }
   },
-  "python.pythonPath": "/Users/florian/.pyenv/versions/konnector/bin/python",
+  "python.pythonPath": "/Users/florian/.pyenv/versions/<VENV>/bin/python",
   "python.venvPath": "~/.pyenv/shims",
   "editor.formatOnPaste": false,
   "editor.formatOnSave": true,
